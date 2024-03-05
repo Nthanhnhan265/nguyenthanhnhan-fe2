@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Line and Rolling Ball</title>
+    <style>
+        .line { 
+            background-color: #53f45e; 
+            position: relative;
+            width: 300px;
+            height: 20px;
+            top: calc((100vh - 20px)/2); 
+            left: calc((100% - 300px)/2);
+            right: 0;   
+            animation: rotateLine 4.9s infinite;
+        }
+        .line:before { 
+            content:"";
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rollBall 5s infinite linear;
+        }
+        @keyframes rotateLine {
+            0%, 100% { transform: rotate(45deg); }
+            50% { transform: rotate(-45deg); }
+        }
+        @keyframes rollBall {
+           0% { left: 100%}
+           50% { left: 0px}
+           100% {left: 100%}
+        }
+    </style>
+</head>
+<body>
+    <div class="line"></div>
+</body>
+</html>

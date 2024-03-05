@@ -1,0 +1,50 @@
+TUẦN 1
+    Nhóm 2-3, hệ số 2 Prj, 
+    Thi: được dùng tài liệu, thi 90p gồm 2 phần css và js (fe,be)
+    ----------
+    1.Position
+        - các giá trị:  static, fixed, absolute, relative
+        - nếu chỉ có 1 position thì không có ý nghĩa nhiều, nên kèm thêm 4 thuộc tính : top, bottom, right, left 
+        1.a static 
+            - là thuộc tính mặc định, được định vị trí theo display (block, inline,flex)
+        1.b fixed
+            - được tách ra khỏi các phần tử web, gốc tọa độ được tính theo cửa sổ trình duyệt
+            - ví dụ như set top 0 và left 0 thì phần tử nằm sát lề trái
+        1.c relative
+            - nếu không có top, bottom, left, right thì coi là static 
+            - nếu có top bottom left right thì sẽ lấy mốc tại vị trí static và tịnh tiến
+        1.d absolute 
+            - nếu không có cha hoặc có cha là position static thì lấy mốc tải viewport đầu tiên
+                 => lúc đầu nằm đâu đó do chỉ định, lúc sau khi kéo được dời lên
+                + viewport là gì ? viewport là vùng màn hình đang nhìn thấy 
+            - nếu khác static thì lấy mốc theo cha: 
+
+    2. Transform: 
+        - Transform-origin: x y: định tọa độ của tâm quay x là chiều ngang, y là dọc
+
+    3. Thẻ giả: 
+        - Mặc định mỗi thẻ có 2 thẻ giả, sau khi mở ngoặc before và trước khi đóng ngoặc after 
+        - thẻ chính::before {
+            content: ''; 
+            ...
+        }
+        - thẻ chính::after { 
+            content:: ''; 
+            ...
+        }
+        => CHÚ Ý: thiếu content thì không chạy
+
+    4. Animation: 
+        - Có 2 loại: 
+            + chuyển động đơn giản: chuyển từ a-b, chuyển màu ... => transition  
+            + chuyển động phức tạp: chuyển dộng của quả bóng, ... => dùng @keyframes và Animation
+        - khi nói về "chuyển động" của Animation thì chú ý đến thời gian và trạng thái bắt đầu và kết thúc 
+        4.a @keyframes
+            + @keyframes tenChuyenDong { 
+                //viết các thời điểm 
+                *thời điểm bắt đầu của chuyển động là 0% 
+                0% { các css }
+                100% { các css}
+            }
+            + Animation gồm thuộc tính name và duration
+    5.

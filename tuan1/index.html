@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .right::-webkit-scrollbar {
+            overflow: hidden;
+        }
+        .right {
+            width: 300px;
+            background-color: red;
+            overflow: auto;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;  
+            transition:ease-in-out 1s;
+        }
+        .right.active{
+            background-color: rgb(42, 13, 206);
+            opacity: .5;
+        }
+        .left { 
+            background-color: green;
+            overflow: auto;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 300px;  
+            left: 0; 
+        }
+        .box { 
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            bottom: 0; 
+            left: 0; 
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- <div class="right">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        
+    </div>
+    <div class="left">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis quaerat voluptatem atque cum, maxime commodi culpa dolorum earum hic, voluptate vitae sit quis fuga. Architecto amet iste explicabo voluptatum id!
+        </p>
+
+    </div> -->
+    <div class="box">
+
+    </div>
+    <script> 
+        const box=document.querySelector('.box');
+        box.addEventListener('click',()=>{ 
+            let i=0; 
+            setInterval(() => {
+                console.log(i); 
+                i+=10; 
+            }, 1000);
+            
+        })
+</script>
+</body>
+</html>

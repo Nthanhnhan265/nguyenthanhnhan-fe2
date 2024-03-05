@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+
+        .box { 
+            /* background-color: #d5c7c7;  */
+            position: relative;
+            width: 200px;
+            height: 200px;
+            top: calc((100vh - 200px)/2); 
+            left:calc((100% - 200px)/2);
+            right: 0;   
+            animation: rotateBox .5s infinite;
+        }
+        .box:before { 
+            content:"";
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: aqua;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box::after { 
+            content:"";
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: rgb(227, 39, 93);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        @keyframes rotateBox {
+            0% {transform: rotate(0deg);}
+            /* 15% {transform: rotate(90deg);}
+            20% {transform: rotate(180deg);}
+            25% {transform: rotate(270deg);}
+            30% {transform: rotate(360deg);}
+            40% { transform: rotate(0deg);} */
+            100% {transform: rotate(360deg);}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+       
+    </div>    
+</body>
+</html>

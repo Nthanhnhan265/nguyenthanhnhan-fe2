@@ -9,6 +9,7 @@
             background-color: blue;
         }        
         .text {
+            position: relative; 
             color: red;
             font-size: 25px;
             width: 50px;
@@ -27,12 +28,50 @@
             transform: translateY(20px);
         }
         a { 
+            margin-top: 30px; 
             text-decoration: none;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
+        .text::after { 
+            content:''; 
+            display: block;
+            position: absolute;
+            top: 0; 
+            left: 5px; 
+            background-color: rgb(255, 255, 255);
+            padding: 40px; 
+            z-index: -1;
+            animation: scale 1.2s infinite; 
+            border-radius: 100%;
+        }
+        .text::before { 
+            content:''; 
+            display: block;
+            position: absolute;
+            top: 0; 
+            left: 5px; 
+            background-color: rgb(255, 255, 255);
+            padding: 40px; 
+            z-index: -1;
+            animation: scale 1.2s 1.3s infinite; 
+            border-radius: 100%;
+        }
+        @keyframes scale {
+            0% {transform: scale(0);
+                opacity: 80%;
+             }
+            50% {transform: scale(1); 
+                opacity: 60%;
+            }
+            75% {
+                opacity: 40%;
+            }
+            100% { transform: scale(2); 
+                 opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>

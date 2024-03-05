@@ -46,5 +46,29 @@ TUẦN 1
                 0% { các css }
                 100% { các css}
             }
-            + Animation gồm thuộc tính name và duration
-    5.
+            + Animation gồm thuộc tính 
+                - name
+                - duration
+                - iteration-count
+                - deylay: là thời gian chờ trước khi chuyển động: nếu delay là số âm thì không chờ,
+                nhưng nó sẽ bắt đầu từ khoảng thời gian đã đặt, ví dụ -1 thì sẽ đếm bắt đầu từ 1 dẫn đến trạng thái là giây thứ 1
+                - iteration-count là lặp lại số lần (infinite để vô hạn)
+                - direction: normal thì thực hiện từ 0-100, reverse (100-0) 
+                    + alternate (0-100-0) alternate-reverse(100-0-100) => dùng chung với iteration-count 
+                - fill-mode: trạng thái trước và sau khi thực hiện chuyển động
+                    + forward: giữ nguyên trạng thái của 100% sau chuyển động 
+                    + backward: trước chuyển động, trạng thái của 0%
+                    + both: bao gồm cả hai cái trên 
+                - timing-function: gia tốc của chuyển động
+                    + ease lúc bắt đầu chậm dần, kết thúc chậm
+                    + ease-in bắt đầu chậm
+                    + ease-out kết thúc chậm dần
+                    + ease-in-out: bắt đầu chậm dần, kết thúc chậm dần => chậm hơn ease
+                    + cubic-bezier(): là hàm, cho phép khai báo gia tốc chậm dần, nhanh dần ... => trang cubic-bezier.com 
+                    + linear: chuyển động đều
+
+
+                
+
+
+    

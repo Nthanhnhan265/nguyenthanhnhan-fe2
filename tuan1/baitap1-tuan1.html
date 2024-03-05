@@ -14,7 +14,7 @@
             top: calc((100vh - 200px)/2); 
             left:calc((100% - 200px)/2);
             right: 0;   
-            animation: rotateBox .5s infinite;
+            animation: rotateBox .5s infinite alternate-reverse ease;
         }
         .box:before { 
             content:"";
@@ -38,11 +38,6 @@
         }
         @keyframes rotateBox {
             0% {transform: rotate(0deg);}
-            /* 15% {transform: rotate(90deg);}
-            20% {transform: rotate(180deg);}
-            25% {transform: rotate(270deg);}
-            30% {transform: rotate(360deg);}
-            40% { transform: rotate(0deg);} */
             100% {transform: rotate(360deg);}
         }
 
@@ -50,7 +45,6 @@
 </head>
 <body>
     <div class="box">
-       
     </div>    
 </body>
 </html>

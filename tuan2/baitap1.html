@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+
+        .box { 
+            position: relative;
+            width: 100px;
+            height: 10px;
+            left:calc((100% - 100px)/2);
+            right: 0;   
+            }
+        .box1 { 
+            top: calc((100vh - 10px)/2); 
+            opacity: 90%;
+            animation: rotateBox 1.1s 1s infinite;
+        }
+        .box2 { 
+            top: calc((100vh - 25px)/2);         
+            animation: rotateBox 1.1s 1.1s infinite;
+            opacity: 70%;
+        }
+        .box3 { 
+            top: calc((100vh - 45px)/2); 
+            animation: rotateBox 1.1s 1.2s infinite;
+            opacity: 60%;
+        }
+        .box4 { 
+            top: calc((100vh - 65px)/2); 
+            animation: rotateBox 1.1s 1.3s infinite;
+            opacity: 50%;
+        }
+        .box5 { 
+            top: calc((100vh - 80px)/2); 
+            animation: rotateBox 1.1s 1.4s infinite;
+            opacity: 40%;
+        }
+        .circle {
+            content:"";
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: rgb(57, 71, 71);
+        }
+        @keyframes rotateBox {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1 box">
+        <div class="circle"></div>
+    </div>    
+    <div class="box2 box">
+        <div class="circle"></div>
+    </div>    
+    <div class="box3 box">
+        <div class="circle"></div>
+    </div>    
+    <div class="box4 box">
+        <div class="circle"></div>
+    </div>    
+    <div class="box5 box">
+        <div class="circle"></div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap ve nha</title>
+    <style>
+        body { 
+            background-color: blue;
+        }
+        .button { 
+            overflow: hidden;
+            width: 113px;
+            height: 10vh; 
+            background-color: #d61515; 
+            border-radius: 30px;
+            color: #391b1b;
+            font-weight: 400;
+            position: relative;
+        }
+        .text { 
+            width: 100%;
+            text-align: center;
+            line-height: 10vh;
+            color: #fff;
+            position: absolute;
+           }
+        .button::before, .button::after { 
+            content: '';
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            border-radius: 100%;
+            box-sizing: border-box;
+            display: block;
+            top: calc((100% - 55px)/2);
+            left: calc((100% - 55px)/2);
+
+        }
+        .button:hover::before { 
+            content: '';
+            animation: scaleEffect 1.2s linear infinite;  
+        }
+        .button:hover::after { 
+            content: '';
+            animation: scaleEffect 1.2s .6s linear infinite;  
+        }
+
+        @keyframes scaleEffect {
+            0% { 
+                transform: scale(0);
+                opacity: 50%;
+                border: 6px solid #fff;
+            }
+            100% { 
+                transform: scale(2);
+                opacity: 10%;
+                border: 10px solid #fff;
+                border-radius: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque qui dolorum nostrum aut, ab quia veniam, possimus, harum sapiente deleniti perspiciatis voluptatem rem hic! Illum, sed odio. Illum, eveniet maxime?</p>
+    <div class="button">
+        <div class="text">
+            Add to cart
+        </div>
+    </div>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque qui dolorum nostrum aut, ab quia veniam, possimus, harum sapiente deleniti perspiciatis voluptatem rem hic! Illum, sed odio. Illum, eveniet maxime?</p>
+</body>
+</html>

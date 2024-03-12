@@ -9,65 +9,62 @@
             background-color: blue;
         }
         .button { 
-            overflow: hidden;
-            width: 113px;
-            height: 10vh; 
             background-color: #d61515; 
             border-radius: 30px;
-            color: #391b1b;
-            font-weight: 400;
             position: relative;
-        }
-        .text { 
-            width: 100%;
             text-align: center;
-            line-height: 10vh;
-            color: #fff;
-            position: absolute;
-           }
-        .button::before, .button::after { 
-            content: '';
-            position: absolute;
-            width: 55px;
-            height: 55px;
-            border-radius: 100%;
-            box-sizing: border-box;
+            overflow: hidden;
+            line-height: 50px;
             display: block;
+            color: #fff;
+            width: 113px;
+            height: 50px; 
+        }
+        .button::before, .button::after { 
+            /* Cach 1: */
             top: calc((100% - 55px)/2);
             left: calc((100% - 55px)/2);
-
+            box-sizing: border-box;
+            /* Cach 2: 
+                top: 50%; 
+                left: 50%; 
+                transform: translate(-50%,-50%); 
+            */
+            border-radius: 100%;
+            position: absolute;
+            height: 55px;
+            width: 55px;
+            content: '';
         }
         .button:hover::before { 
-            content: '';
             animation: scaleEffect 1.2s linear infinite;  
+            content: '';
         }
         .button:hover::after { 
-            content: '';
             animation: scaleEffect 1.2s .6s linear infinite;  
+            content: '';
         }
-
         @keyframes scaleEffect {
             0% { 
+                border: 6px solid #fff;
                 transform: scale(0);
                 opacity: 50%;
-                border: 6px solid #fff;
             }
             100% { 
                 transform: scale(2);
-                opacity: 10%;
                 border: 10px solid #fff;
-                border-radius: 30px;
+                opacity: 0%;
             }
         }
     </style>
 </head>
 <body>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque qui dolorum nostrum aut, ab quia veniam, possimus, harum sapiente deleniti perspiciatis voluptatem rem hic! Illum, sed odio. Illum, eveniet maxime?</p>
-    <div class="button">
+    <a class="button">
         <div class="text">
-            Add to cart
+            Button
         </div>
-    </div>
+    </a>
     
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque qui dolorum nostrum aut, ab quia veniam, possimus, harum sapiente deleniti perspiciatis voluptatem rem hic! Illum, sed odio. Illum, eveniet maxime?</p>
 </body>

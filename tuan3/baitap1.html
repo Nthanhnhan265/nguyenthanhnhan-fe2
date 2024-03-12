@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+        body {
+            /* background: url(test.png) no-repeat center center; */
+            background-color: blue;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+        }
+        .snow {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            color: #fff;
+            animation: shake 2s infinite alternate, fall 3.5s forwards;
+            top: -10%;
+            left: 0;
+        }
+        .snowman {
+            position: absolute;
+            top: 100%;
+            transform: translateY(-50%); 
+            left: 0%; 
+            z-index: -2;
+        }
+
+        @keyframes fall {
+            0% {
+                top: 0%
+            }
+
+            100% {
+                transform: translateX(0px);
+                top: calc(100% - 50px)
+            }
+        }
+
+        @keyframes shake {
+            0% {
+            }
+
+            100% {
+                transform: translateX(200px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button id="btnAdd">
+        Add snow
+    </button> -->
+    <div class="snowman">
+        <img src="snowmani.png" alt="test">
+    </div>
+    <div class="screen">
+       
+    </div>
+    <script>
+
+        const btnAdd = document.querySelector('#btnAdd');
+        const body = document.querySelector(".screen");
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        } 
+        
+        setInterval(()=>{
+            const divSnow= document.createElement('div');
+            divSnow.classList.add("snow"); 
+            divSnow.textContent= "❆";
+            divSnow.setAttribute('style',`left:${getRandomArbitrary(0, 100)}%;animation:fall ${getRandomArbitrary(5, 15)}s ${getRandomArbitrary(0.2, 1)}s forwards, shake ${getRandomArbitrary(3.5, 5)}s 5 alternate; font-size:${getRandomArbitrary(20, 50)}px; opacity: ${getRandomArbitrary(70, 100)}%; filter: blur(${getRandomArbitrary(0, 7)}px)`); 
+            body.appendChild(divSnow); 
+        },10000); 
+
+    </script>
+</body>
+
+</html>

@@ -34,7 +34,7 @@ TUẦN 1
         }
         => CHÚ Ý: thiếu content thì không chạy
 
-    4. Animation: 
+    4. Chuyển động với Animation: 
         - Có 2 loại: 
             + chuyển động đơn giản: chuyển từ a-b, chuyển màu ... => transition  
             + chuyển động phức tạp: chuyển dộng của quả bóng, ... => dùng @keyframes và Animation
@@ -67,6 +67,18 @@ TUẦN 1
                     + cubic-bezier(): là hàm, cho phép khai báo gia tốc chậm dần, nhanh dần ... => trang cubic-bezier.com 
                     + linear: chuyển động đều
 
+    5. Chuyển động với Transition
+        - khác nhau với Animation: 
+            + Animation có nhiều trạng thái từ 0->100
+            + Transition chỉ có 0 và 100% 
+        - các thuộc tính của transition
+            + delay 
+            + duration 
+            + property 
+            + timing-function
+            =>viết tắt: transition: .... 
+        - nếu có 1 ảnh có sẵn các trạng thái, có thể dùng transition để chuyển trạng thái khi hover => dùng background-position
+        
 
                 
 

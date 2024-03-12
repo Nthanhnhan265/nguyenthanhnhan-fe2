@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #001868;
+        }
+
+        .snow {
+            position: fixed;
+            top: 0;
+            font-size: 30px;
+            color: #fff;
+            animation: fall 5s linear infinite, fluctuate 1s infinite alternate ease-in-out;
+        }
+
+        @keyframes fall {
+            0% {
+                top: 0;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        @keyframes fluctuate {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(50px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-add">Add snow</button>
+    <div class="snow-canvas"></div>
+
+    <script>
+        const btnAdd = document.querySelector('.btn-add');
+        const snowCanvas = document.querySelector('.snow-canvas');
+        btnAdd.addEventListener('click', function () {
+            const snow = document.createElement('div');
+            snow.classList.add('snow');
+            snow.textContent = '❄';
+            snow.style.left = getRandomIntInclusive(0, 90) + '%';
+            snow.style.fontSize = getRandomIntInclusive(10, 50) + 'px';
+            snow.style.opacity = getRandomIntInclusive(5, 10) * 0.1;
+            snow.style.filter = `blur(${getRandomIntInclusive(0, 3)}px)`;
+            snow.style.animationDuration = ` ${getRandomIntInclusive(3, 8)}s, ${getRandomIntInclusive(1, 3)}s`;
+            snowCanvas.append(snow);
+        });
+
+        function getRandomIntInclusive(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+        }
+    </script>
+</body>
+
+</html>

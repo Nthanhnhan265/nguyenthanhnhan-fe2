@@ -6,77 +6,20 @@
     <title>Bai tap 2</title>
     <style>
         body { 
-            background-color: blue;
-        }        
-        .text {
-            position: relative; 
-            color: red;
-            font-size: 25px;
+            background-color: rgb(0, 70, 117);
+        }
+        .btn-animation { 
+            background-color: #fff;
             width: 50px;
             height: 50px;
-            background-color: aliceblue;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100%;
-            padding: 20px; 
-            border: 5px solid rgb(156, 143, 143)
-        } 
-        .text:active { 
-            color: blue;
-            transform: translateY(20px);
-        }
-        a { 
-            margin-top: 30px; 
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .text::after { 
-            content:''; 
             display: block;
-            position: absolute;
-            top: 0; 
-            left: 5px; 
-            background-color: rgb(255, 255, 255);
-            padding: 40px; 
-            z-index: -1;
-            animation: scale 1.2s infinite; 
-            border-radius: 100%;
-        }
-        .text::before { 
-            content:''; 
-            display: block;
-            position: absolute;
-            top: 0; 
-            left: 5px; 
-            background-color: rgb(255, 255, 255);
-            padding: 40px; 
-            z-index: -1;
-            animation: scale 1.2s 1.3s infinite; 
-            border-radius: 100%;
-        }
-        @keyframes scale {
-            0% {transform: scale(0);
-                opacity: 80%;
-             }
-            50% {transform: scale(1); 
-                opacity: 60%;
-            }
-            75% {
-                opacity: 40%;
-            }
-            100% { transform: scale(2); 
-                 opacity: 0;
-            }
         }
     </style>
 </head>
 <body>
-    <a href="#">
+    <a href="#" class="btn-animation">
         <div class="text">Buy</div>
     </a>
+    
 </body>
 </html>

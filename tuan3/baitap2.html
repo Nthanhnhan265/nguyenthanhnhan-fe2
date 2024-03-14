@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 2</title>
+    <style>
+        .navbar { 
+            position: fixed;
+            right: 0;
+            border: 1px solid rgba(0,0,0,0.5);
+            display: inline-block;
+            box-shadow: 3px 3px 18px rgba(0,0,0,0.5);
+        }
+        ul { 
+            padding-left: 0;
+            position: relative;
+            background-color: #fff;
+        }
+        .box { 
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            background-image: url('./Fe2/Animation/sidemenu-icons.png');
+            margin: 15px; 
+        }
+        .box1::after, .box2::after, .box3::after, .box4::after, .box5::after { 
+            content: ''; 
+            position: absolute;
+            transition: all .5s;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 60px;
+            background-color: rgba(0,0,0,1);
+            right: -15px;    
+            color: #fff; 
+            height: 60px;
+            padding: 0 10px;
+            z-index: -4;
+        }
+        .box1::after { 
+            content: 'Showcase';
+        }
+        .box2::after { 
+            content: 'Blog';
+        }
+        .box3::after { 
+            content: 'Question';
+        }
+        .box4::after { 
+            content: 'Help';
+        }
+        .box5::after { 
+            content: 'Contact';
+        }
+        .box1:hover::after,.box2:hover::after ,.box3:hover::after ,.box4:hover::after ,.box5:hover::after  { 
+            right: 90px; 
+        }
+    
+        .box2 {      
+            background-position: 0 -120px;
+        }
+        .box3 { 
+            background-position: 0 -240px;
+        }
+        .box4 { 
+            background-position: 0 -360px;
+        }
+        .box5 { 
+            background-position: 0 -480px;
+        }
+        .box1:hover {     
+            background-position: 0 -60px;
+        }
+        .box2:hover { 
+            background-position: 0 -180px;
+        }
+        .box3:hover {       
+            background-position: 0 -300px;
+        }
+        .box4:hover { 
+            background-position: 0 -420px;
+        }
+        .box5:hover { 
+            background-position: 0 -540px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li class="box box1"></li>
+            <li class="box box2"></li>
+            <li class="box box3"></li>
+            <li class="box box4"></li>
+            <li class="box box5"></li>
+        </ul>
+
+    </div>
+</body>
+</html>

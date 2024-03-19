@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 2</title>
+    <style>
+        body { 
+            background-color: #eafac6 ;
+
+        }
+        .navbar { 
+            position: fixed;
+            right: 0; 
+            top: calc(50% - 25vh) ; 
+          
+        }
+        .side { 
+           position: absolute;
+           width: 15vw;
+           height: 50vh;
+           top: 0; 
+           right: 0; 
+        }
+        .side:nth-child(2) { 
+            fill: #02a148 ;
+            animation: moveRTL .3s .1s cubic-bezier(.42,-0.35,.82,1.47) infinite;
+        }
+        .side:nth-child(1) { 
+            fill: #fff ;
+            z-index: 1;
+            width: 20vw;
+        }
+
+
+        @keyframes moveRTL {
+            0% { 
+                right: -20px;
+            }
+            100% { 
+                right: 0px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <svg class="side side_shape_back" viewBox="0 0 130 200" preserveAspectRatio="none">
+            <path class="side_shape_back_4" d="M130,200V0c0,39.1-66.8,56.7-66.8,105.1C63.2,139.7,130,154.1,130,200z"></path>
+        </svg>
+        <svg class="side side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
+            <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>
+        </svg>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai Tap 1</title>
+    <style>
+        div { 
+
+        }
+        .img1 {
+            position: fixed;
+            bottom: 0; 
+            /* background-repeat:no-repeat; */
+            background-size:contain;
+            height: 100px;
+            width:100vw;
+            background-image: url('wave.svg');
+            transition: all 0.3s;
+            animation: horizontalWave 5s infinite linear; 
+        }
+        
+        .img2 {
+            position: fixed;
+            bottom: 0; 
+            /* background-repeat:no-repeat; */
+            background-size:contain;
+            height: 100px;
+            width:100vw;
+            background-image: url('wave.svg');
+            transition: all 0.3s;
+            animation: horizontalWave 8s 2s infinite linear;
+        }
+        .boat> img { 
+            width: 100px;
+            height: 100px;
+            display: inline;
+            position: fixed;
+            bottom: 20px;
+            right :0px; 
+            animation: moveX 15s infinite ,moveY 3s infinite alternate;
+        }
+       
+        @keyframes horizontalWave {
+            0% {
+                background-position: 0 0;
+            }
+            100% { 
+
+                background-position: -1600px 0;
+            }
+            
+        }
+        
+        @keyframes moveX {
+            0% {
+                right :0px; 
+            }
+            100% { 
+                right: 100%; 
+            }
+        }
+        @keyframes moveY {
+            0% {
+                transform: translateY(0);
+            }
+            100% { 
+                transform: translateY(20px);
+            }
+        }
+      
+
+    </style>
+
+</head>
+<body>
+    <div class="img1"></div>
+    <div class="img2"></div>
+    <div class="boat">
+        <img src="boat.svg" alt="no">
+
+    </div>
+    <div class="tor">
+        <img src="twister-tornado.svg" alt="no">
+    </div>
+    </body>
+</html>

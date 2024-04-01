@@ -1,56 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bai tap 2</title>
     <style>
-        body { 
-            background-color: #eafac6 ;
-
+        body {
+            background-color: #eafac6;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        .navbar { 
+
+        .navbar {
             position: fixed;
-            right: 0; 
-            top: calc(50% - 25vh) ; 
-          
+            right: 0;
+            top: calc(50% - 30vh);
+
         }
-        .side { 
-           position: absolute;
-           width: 15vw;
-           height: 50vh;
-           top: 0; 
-           right: 0; 
+
+        .side {
+            position: absolute;
+            width: 5vw;
+            height: 60vh;
+            top: 0;
+            right: 0;
         }
-        .side:nth-child(2) { 
-            fill: #02a148 ;
-            animation: moveRTL .3s .1s cubic-bezier(.42,-0.35,.82,1.47) infinite;
+
+        .side_shape_back {
+            fill: #02a148;
+            transition: transform .2s .15s, width .2s .39s cubic-bezier(.27, -0.52, .84, 2.8);
+            /* display: none;    */
+
         }
-        .side:nth-child(1) { 
-            fill: #fff ;
+        .side_shape_front {
+            fill: #fff;
             z-index: 1;
-            width: 20vw;
+            width: 0vw;
+            transition: all .4s .1s cubic-bezier(.27, -1.5, .84, 3);
+            /* display: none;    */
+        }
+        
+        ul {
+            list-style: circle;
+            width: 9.8vw;
+            height: 1.5vh;
+            margin: 10px 10px 20px 0px;
+            position: relative;
+            transition: all .5s;
+            right: -20px;
+        }
+        .content {
+            width: 13.5vw;
+            height: 60vh;
+        }
+        
+        li {
+            color: #999e9d;
+            text-align: center;
+            list-style: none;
+            box-sizing: border-box;
+            transition: all .2s;
+            font-size: 15px;
+
+        }
+        .dots {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            z-index: 2;
+            transform: translateY(-50%);
+            transition: all .4s .1s;
+        }
+        
+        li::after,
+        li::before {
+            position: absolute;
+            top: calc(50%);
+            transform: translateY(-25%);
+            right: 0px;
+            content: '\25CB';
+            color: #03a24c;
+            font-size: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-weight: bolder;
+            
+        }
+        li::before { 
+            display: none;
+        }
+        ul:nth-child(1) li {
+            color: #000;
+            font-weight: bolder;
+            font-size: 16px;
         }
 
+        ul:nth-child(1) li:after {
+            content: '\25CF';
+            color: #55ba88;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .dots-out {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-        @keyframes moveRTL {
-            0% { 
-                right: -20px;
+        .dots-element>li:after {
+            color: #fff !important;
+            position: absolute;
+            right: 14px;  
+        }
+        .dots-element:nth-child(1)>li::after { 
+            transition: all .5s .4s cubic-bezier(.27, -0.52, .84, 2);
+
+        }
+        .dots-element:nth-child(2)>li::after { 
+            transition: all .5s .43s  cubic-bezier(.27, -0.52, .84, 2.1);
+        }
+        .dots-element:nth-child(3)>li::after { 
+            transition: all .5s .46s  cubic-bezier(.27, -0.52, .84, 2.18);
+        }
+        .dots-element:nth-child(4)>li::after { 
+            transition: all .5s .49s  cubic-bezier(.27, -0.52, .84, 2.2);
+        }
+        /* hover navbar -> change green one */
+        .navbar:hover>.side_shape_back {
+            transform: scaleY(1.2);
+            width: 23vw;
+            transition-delay: .3s;
+
+        }
+        /* hover navbar -> change white one */
+        .navbar:hover .side_shape_front {
+            width: 18vw;
+            transform: scaleY(0.9);
+            transition-delay: 0.15s;
+        }
+
+        /* Hover navbar -> change the delay of first dot */
+        .navbar:hover ul:nth-child(1) {
+            right: 10px;
+            transition-delay: .3s;
+        }
+        /* Hover navbar -> change the delay of second dot */
+        .navbar:hover ul:nth-child(2) {
+            right: 10px;
+            transition-delay: .35s;
+        }
+        /* Hover navbar -> change the delay of third dot */
+        .navbar:hover ul:nth-child(3) {
+            right: 10px;
+            transition-delay: .4s;
+        }
+        /* Hover navbar -> change the delay of fourth dot */
+        .navbar:hover ul:nth-child(4) {
+            right: 10px;
+            transition-delay: .45s;
+        }
+
+        /* hover nabar -> dots are move from right to left */
+        .navbar:hover .dots {
+            left: 0;
+        }
+        /* hover li or ul -> changed first dots selected*/
+        li:hover,
+        ul:nth-child(1):hover li {
+            font-weight: bolder;
+            padding-right: 45px;
+            color: #55ba88;
+            font-size: 18px;
+
+        }
+        /* hover li -> changed the circle dot to the filled dot  */
+        li:hover::after {
+            content: '\25CF';
+        }
+        /* hover li -> changed the animation of dots hovered */
+        li:hover::before {
+            display: inline;
+            content: '\25CF';
+            animation: scale .6s linear infinite;
+            opacity: .3;
+            top: -20%
+        }
+        .navbar:hover .dots-element>li::after { 
+            right: -30px;
+
+        }
+
+      
+
+        @keyframes scale {
+            0% {
+
+                transform: scale(0);
             }
-            100% { 
-                right: 0px; 
+
+            100% {
+                transform: scale(2.5);
+
             }
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
+        <div class="dots-out">
+            <ul class="dots-element">
+                <li></li>
+            </ul>
+            <ul class="dots-element">
+                <li></li>
+            </ul>
+            <ul class="dots-element">
+                <li></li>
+            </ul>
+            <ul class="dots-element">
+                <li></li>
+            </ul>
+        </div>
+
         <svg class="side side_shape_back" viewBox="0 0 130 200" preserveAspectRatio="none">
-            <path class="side_shape_back_4" d="M130,200V0c0,39.1-66.8,56.7-66.8,105.1C63.2,139.7,130,154.1,130,200z"></path>
+            <path class="side_shape_back_4" d="M130,200V0c0,39.1-66.8,56.7-66.8,105.1C63.2,139.7,130,154.1,130,200z">
+            </path>
         </svg>
-        <svg class="side side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
-            <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>
-        </svg>
+
+        <div class="content">
+            <svg class="side side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
+                <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z">
+                </path>
+            </svg>
+            <div class="dots">
+                <ul>
+                    <li> content 1</li>
+                </ul>
+                <ul>
+                    <li> content 2</li>
+                </ul>
+                <ul>
+                    <li> content 3</li>
+                </ul>
+                <ul>
+                    <li> content 4</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </body>
+
 </html>

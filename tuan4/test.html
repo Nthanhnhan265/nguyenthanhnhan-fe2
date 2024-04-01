@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<style>
+   .menu a {
+  color:#505050;
+  position:relative;
+  text-decoration:none;
+  margin-left:5px;
+  margin-right:5px;
+  transition:1s;
+  padding-left:20px;
+  padding-right:20px;
+    padding-top:26px;
+  padding-bottom:25px;
+  transition:1s;
+}
+@-webkit-keyframes menu {
+  0% {top:0;}
+  10%, 100% {top:10px;}
+}
+@-webkit-keyframes menu2 {
+    0% {top:10px;}
+  100% {top:10px;}
+}
+div { 
+    width: 1000px;
+}
+
+.menu:hover a {
+  background-color:#e03333;
+  color:#ffffff;
+margin-left: 100px;
+  -webkit-animation-name:menu, menu2;
+  -webkit-animation-duration:10s, 9999s;
+  -webkit-animation-delay: 3s, 10s;
+  -webkit-animation-iteration-count:1;
+}
+
+</style>
+<body>
+    <div class="menu"><a href="">he</a></div>
+</body>
+</html>

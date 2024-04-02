@@ -1,0 +1,9 @@
+Tuần 5: 
+    perspective => khoảng cách của mắt đến màn hình 500 - 800 px 
+        - càng lớn thì hiệu ứng 3d càng ít, và ngược lại 
+
+    viết perspective cho cha
+    parent { 
+        perspective: .... 
+    }
+    

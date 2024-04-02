@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 2</title>
+    <style>
+        /* kich co cho cha */
+        .parent {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            left: 50%;
+            top: 50vh;
+            perspective: 500px;
+        }
+        a {
+            transform-style: preserve-3d;
+            position: absolute;
+            inset: 0;
+            display: block;
+            transition: .5s;
+        }
+        a:hover {
+            transform: rotateX(-90deg);
+        }
+        .btn>div {
+            position: absolute;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 100px;
+            inset: 0;
+        }
+        .top {
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .front {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid black;
+            color: black;
+            transform: translateZ(50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <a href="#" class="btn">
+            <div class="top">1</div>
+            <div class="front">2</div>
+        </a>
+    </div>
+
+</body>
+
+</html>

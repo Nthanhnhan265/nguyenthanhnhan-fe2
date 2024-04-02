@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+        .parent { 
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            perspective: 500px;
+            position: relative;
+            top: 5vh; 
+            left: 50%; 
+        }
+        .box {
+            background-color: red; 
+            width: 300px;
+            height: 300px;
+            transition: all 1s;
+            position: relative;
+            transform-style: preserve-3d;
+            /* transform: translateZ(50px); */
+        }
+        .box2, .box3 { 
+            display: block;
+            position: absolute;
+            top: 0; 
+            height: 300px;
+            width: 150px;
+            z-index: 1; 
+        }
+        .box2 { left: 0; }
+        .box3 { left: 150px;} 
+
+        .box:after , .box::before { 
+            content: '';
+            position: absolute;
+            width: 100px; 
+            height: 300px; 
+            background-color: rgb(226, 89, 43);
+            
+        }
+        .box::before { 
+            left: -50px; 
+            transform: rotateY(90deg) translateX(50px);
+            
+        }
+        .box::after { 
+            right: -50px; 
+            transform: rotateY(90deg) translateX(50px);
+        }
+        /* thay doi thuoc tinh cua the cung cap */
+        .box2:hover ~ .box {
+            transform: rotateY(45deg);
+        }
+        .box3:hover ~ .box {
+            transform: rotateY(-45deg);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box2">
+            
+        </div>
+        <div class="box3">
+            
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

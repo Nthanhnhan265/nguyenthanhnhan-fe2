@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 1</title>
+    <style>
+        .parent { 
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            perspective: 500px;
+            position: relative;
+        }
+        .box {
+            background-color: red; 
+            width: 300px;
+            height: 300px;
+            transition: all 1s;
+        }
+        .box2, .box3 { 
+            display: block;
+            position: absolute;
+            top: 0; 
+            height: 300px;
+            width: 150px;
+            z-index: 1; 
+        }
+        .box2 { 
+            left: 0;
+
+        }
+        .box3 { 
+            left: 150px; 
+
+        } 
+        .box2:hover ~ .box {
+            transform: rotateY(45deg);
+        }
+        .box3:hover ~ .box {
+            transform: rotateY(-45deg);
+        }
+     
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box2">
+            
+        </div>
+        <div class="box3">
+            
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

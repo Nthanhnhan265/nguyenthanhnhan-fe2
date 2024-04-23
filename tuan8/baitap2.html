@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add square</title>
+    <style>
+        .holder {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+
+        .square {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <button>
+        Add square
+    </button>
+    <div class="holder">
+        <div class="square"></div>
+    </div>
+    <script>
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        const holder = document.querySelector('.holder');
+        document.querySelector('button').addEventListener('click', () => {
+            const square = document.createElement('div')
+            square.className = 'square'
+            holder.appendChild(square)
+            requestAnimationFrame(() => {
+                square.style.top = `${getRandomArbitrary(-50,50)}vh`
+                square.style.left = `${getRandomArbitrary(-50,50)}vw`
+                square.style.backgroundColor ='rgb(' + getRandomArbitrary(0,255) +"," + getRandomArbitrary(0,255) +","+getRandomArbitrary(0,255)+ ")";
+            })
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add,remove</title>
+    <style>
+        .holder {
+            padding: 10px;
+        }
+
+        .box {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(253, 103, 3);
+            opacity: 0;
+            transition: 1s;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>add</button>
+    <div class="holder">
+        <div class="box">
+
+        </div>
+    </div>
+    <script>
+        const holder = document.querySelector('.holder');
+        document.querySelector('button').addEventListener('click', () => {
+            const box = document.createElement('div')
+            box.className = 'box'
+            holder.appendChild(box)
+
+            requestAnimationFrame(() => {
+                box.style.opacity = "1"
+            })
+
+            box.addEventListener('click',()=>{ 
+                requestAnimationFrame(()=>{ 
+                    box.addEventListener('transitionend',()=>{ 
+                        holder.removeChild(box);
+                    })
+                    box.style.opacity = "0"
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        body { 
+            min-height: 500vh;
+            background: linear-gradient(180deg,rgba(2,0,36,1) 0%, rgba(98,233,255,1) 20%, rgba(255,247,81,1) 41%, rgba(255,132,0,1) 62%, rgba(255,51,0,1) 82%, rgba(33,0,96,1) 100%);
+            background-size: 100% 500% ;
+            animation: changeBG 1s linear;
+            animation-delay: calc(var(--n) * -1s);  
+            animation-play-state: paused;
+            animation-fill-mode: both;
+        }
+        .text { 
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 5em;
+            animation: changeText .3s linear;
+            animation-fill-mode: both;
+            animation-play-state: paused;
+
+        }
+        div.morning { 
+            animation-delay: calc(var(--n) * -1s);
+        }
+        div.afternoon { 
+            animation-delay: calc(var(--n) * -1s + .3s);
+        }
+        div.night { 
+            animation-delay: calc(var(--n) * -1s + .6s);
+        }
+        @keyframes changeText {
+            0% { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% { 
+                opacity: 100%;
+                transform: translateY(0px);
+            }
+            100% { 
+                opacity: 0%;
+            }
+        }
+        @keyframes changeBG {
+            0% { 
+                background-position: 0 0;
+            }
+            100% { 
+                background-position: 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text morning">Good morning</div>
+    <div class="text afternoon">Good afternoon</div>
+    <div class="text night">Good night</div>
+    <script>
+        window.addEventListener('scroll',()=>{ 
+            document.body.style.setProperty('--n',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+        })
+    </script>
+</body>
+</html>
